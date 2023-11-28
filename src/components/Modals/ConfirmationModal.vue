@@ -4,7 +4,7 @@ import { useToggleStore } from '@/stores/toggle'
 import { useRouter } from 'vue-router'
 
 const props = defineProps<{
-  id: string
+  id: string | string[]
 }>()
 
 const toggle = useToggleStore()
@@ -12,9 +12,11 @@ const todos = useTodosStore()
 const router = useRouter()
 
 const deleteTodo = () => {
-  todos.deleteTodo(props.id)
-  router.replace('/')
-  toggle.toggleConfirmationModal()
+  if (typeof props.id === 'string') {
+    todos.deleteTodo(props.id)
+    router.replace('/')
+    toggle.toggleConfirmationModal()
+  }
 }
 </script>
 

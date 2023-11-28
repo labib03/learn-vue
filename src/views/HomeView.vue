@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, watch } from 'vue'
+import { computed } from 'vue'
 import BlankData from '@/components/Blank/BlankData.vue'
 import NoteCard from '@/components/NoteCard/NoteCard.vue'
 import { useTodosStore } from '@/stores/todos'
