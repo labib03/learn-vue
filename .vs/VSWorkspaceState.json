@@ -1,8 +1,12 @@
 {
   "ExpandedNodes": [
     "",
-    "\\src"
+    "\\src",
+    "\\src\\assets",
+    "\\src\\components",
+    "\\src\\stores",
+    "\\src\\views"
   ],
-  "SelectedNode": "\\src\\App.vue",
+  "SelectedNode": "\\src\\views\\CompletedView.vue",
   "PreviewInSolutionExplorer": false
 }

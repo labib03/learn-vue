@@ -1,5 +1,40 @@
 @import './base.css';
 
+* {
+  font-family: 'Supreme', sans-serif;
+}
+
+#app {
+  margin-inline: 12rem;
+}
+
+textarea {
+  resize: none;
+}
+
+* {
+  --sb-track-color: #f8fafc;
+  --sb-thumb-color: #6ca086;
+  --sb-size: 14px;
+
+  scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+}
+
+*::-webkit-scrollbar {
+  width: var(--sb-size);
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+  border-radius: 27px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: 27px;
+  border: 3px solid #f8fafc;
+}
+
 /* #app {
   max-width: 1280px;
   margin: 0 auto;
