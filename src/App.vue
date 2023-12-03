@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { RouterView } from 'vue-router'
-import MainHeader from './components/Header/MainHeader.vue'
 import NewTodosFormVue from './components/Form/NewTodosForm.vue'
 import UpdateTodosForm from './components/Form/UpdateTodosForm.vue'
+import MainHeader from './components/Header/MainHeader.vue'
 </script>
 
 <template>

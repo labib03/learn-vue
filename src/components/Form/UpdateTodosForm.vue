@@ -42,13 +42,16 @@ function saveTodo() {
     text: 'Success Update Note'
   }
 
-  const payload = {
-    ...selectedTodo,
+  const payload: TodosType = {
+    id: selectedTodo?.id as string,
     title: form.value.title as string,
     content: form.value.content as string,
-    color: form.value.color as string
+    color: form.value.color as string,
+    when: selectedTodo?.when as Date,
+    whenUpdate: new Date(),
+    isComplete: selectedTodo?.isComplete as boolean
   }
-  todos.updateTodo(payload as TodosType)
+  todos.updateTodo(payload)
 }
 
 function closeForm() {
@@ -112,6 +115,7 @@ function setColor(payload: string) {
 .overlay {
   position: fixed;
   inset: 0;
+  z-index: 99;
   background-color: white;
 }
 

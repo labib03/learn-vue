@@ -5,7 +5,8 @@ export type TodosType = {
   title: string
   content: string
   color: string
-  when: Date
+  when?: Date
+  whenUpdate?: Date
   id: string
   isComplete: boolean
 }

@@ -1,5 +1,5 @@
-import { ref } from 'vue'
 import { defineStore } from 'pinia'
+import { ref } from 'vue'
 
 export const useToggleStore = defineStore('toggle', () => {
   const showFormNewTodos = ref(false)
@@ -13,12 +13,17 @@ export const useToggleStore = defineStore('toggle', () => {
   const modal = ref({
     confirmation: false
   })
-  // const doubleCount = computed(() => count.value * 2)
   function toggleFormNewTodos() {
     showFormNewTodos.value = !showFormNewTodos.value
   }
   function toggleFormUpdateTodos() {
-    showFormUpdateTodos.value = !showFormUpdateTodos.value
+    if (showFormUpdateTodos.value) {
+      document.body.style.overflowY = 'auto'
+      showFormUpdateTodos.value = false
+    } else {
+      document.body.style.overflowY = 'hidden'
+      showFormUpdateTodos.value = true
+    }
   }
   function toggleFullScreen() {
     isFullScreen.value = !isFullScreen.value

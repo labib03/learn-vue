@@ -3,6 +3,7 @@ import UpdateTodosForm from '@/components/Form/UpdateTodosForm.vue'
 import ConfirmationModal from '@/components/Modals/ConfirmationModal.vue'
 import { useTodosStore } from '@/stores/todos'
 import { useToggleStore } from '@/stores/toggle'
+import { convertDate } from '@/utils/text-manipulation'
 import { computed } from 'vue'
 import { useRoute } from 'vue-router'
 
@@ -51,10 +52,17 @@ function showConfirmationModal() {
     </div>
     <p class="content">{{ detailTodo?.content }}</p>
   </div>
-  <!-- <div class="footer"></div> -->
+  <div class="footer" v-if="detailTodo?.whenUpdate !== undefined">
+    <p>Last Updated: {{ convertDate(detailTodo?.whenUpdate, 'DD MMMM YYYY, HH:mm') }}</p>
+  </div>
 </template>
 
 <style scoped>
+.floating {
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+}
 .container {
   margin-bottom: 5rem;
 }
@@ -71,6 +79,7 @@ function showConfirmationModal() {
   white-space: pre-wrap;
   font-weight: 500;
   font-size: 1rem;
+  color: black;
 }
 .circle-color {
   display: block;
@@ -106,15 +115,16 @@ function showConfirmationModal() {
 
 .footer {
   position: fixed;
-  bottom: 5px;
+  bottom: 0;
   left: 0;
   padding-inline: 15rem;
+  padding-block: 5px;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 15px;
   width: 100%;
   background-color: white;
-  background-color: red;
+  color: black;
 }
 </style>
