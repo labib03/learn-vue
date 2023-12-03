@@ -5,6 +5,9 @@ import UpdateTodosForm from './components/Form/UpdateTodosForm.vue'
 import MainHeader from './components/Header/MainHeader.vue'
 </script>
 
+<!-- TODO: fix bugs on modal new todos -->
+<!-- case is: sometimes the values is not "undefined", when first loaded the modal -->
+
 <template>
   <MainHeader />
   <NewTodosFormVue />
