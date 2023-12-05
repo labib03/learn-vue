@@ -9,7 +9,7 @@ import MainHeader from './components/Header/MainHeader.vue'
 <!-- case is: sometimes the values is not "undefined", when first loaded the modal -->
 
 <template>
-  <MainHeader />
+  <!-- <MainHeader /> -->
   <NewTodosFormVue />
   <UpdateTodosForm />
   <!-- <header>
@@ -37,5 +37,9 @@ import MainHeader from './components/Header/MainHeader.vue'
 .v-enter-from,
 .v-leave-to {
   opacity: 0;
+}
+
+.hover:hover {
+  cursor: pointer;
 }
 </style>

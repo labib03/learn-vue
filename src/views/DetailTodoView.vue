@@ -4,10 +4,12 @@ import ConfirmationModal from '@/components/Modals/ConfirmationModal.vue'
 import { useTodosStore } from '@/stores/todos'
 import { useToggleStore } from '@/stores/toggle'
 import { convertDate } from '@/utils/text-manipulation'
+import { ChevronLeft } from 'lucide-vue-next'
 import { computed } from 'vue'
-import { useRoute } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
 
 const { params } = useRoute()
+const router = useRouter()
 const todos = useTodosStore()
 const toggleStore = useToggleStore()
 
@@ -26,11 +28,23 @@ function showFormUpdate() {
 function showConfirmationModal() {
   toggleStore.toggleConfirmationModal()
 }
+
+function back() {
+  router.back()
+}
 </script>
 
 <template>
   <UpdateTodosForm />
   <ConfirmationModal :id="params.todo" />
+
+  <header class="header-container">
+    <button @click="back" class="btn-back hover">
+      <ChevronLeft color="black" :size="32" class="icon-back" />
+      <p>Back</p>
+    </button>
+  </header>
+
   <div class="container">
     <div class="heading">
       <div
@@ -65,6 +79,37 @@ function showConfirmationModal() {
 }
 .container {
   margin-bottom: 5rem;
+}
+
+.header-container {
+  padding-block: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.btn-back {
+  outline: none;
+  border: none;
+  /* padding-inline: 1rem; */
+  /* padding-block: 0.5rem; */
+  font-size: 2rem;
+  text-transform: uppercase;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  margin-left: -12px;
+}
+
+.icon-back {
+  padding: 0;
+  transform: translateX(0);
+  transition: all 0.1s ease-in;
+}
+
+.btn-back:hover > .icon-back {
+  /* background-color: #fca5a5; */
+  transform: translateX(-3px);
 }
 
 .heading {

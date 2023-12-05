@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import BlankData from '@/components/Blank/BlankData.vue'
+import MainHeader from '@/components/Header/MainHeader.vue'
 import NoteCard from '@/components/NoteCard/NoteCard.vue'
 import { useTodosStore } from '@/stores/todos'
 import { computed } from 'vue'
@@ -12,6 +13,7 @@ const completedTodos = computed(() => {
 </script>
 
 <template>
+  <MainHeader />
   <div>
     <div v-if="completedTodos.length > 0" class="todos-container">
       <NoteCard

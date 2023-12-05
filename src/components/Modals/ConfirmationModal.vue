@@ -38,6 +38,7 @@ const deleteTodo = () => {
 <style scoped>
 .overlay {
   position: fixed;
+  z-index: 99;
   inset: 0;
   top: 0;
   display: flex;

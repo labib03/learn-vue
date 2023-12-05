@@ -4,6 +4,7 @@ import BlankData from '@/components/Blank/BlankData.vue'
 import NoteCard from '@/components/NoteCard/NoteCard.vue'
 import { useTodosStore } from '@/stores/todos'
 import { useToggleStore } from '@/stores/toggle'
+import MainHeader from '@/components/Header/MainHeader.vue'
 
 const toggle = useToggleStore()
 const todos = useTodosStore()
@@ -14,6 +15,7 @@ const uncompleteTodo = computed(() => {
 </script>
 
 <template>
+  <MainHeader />
   <main>
     <button class="btn-new-todos" @click="toggle.toggleFormNewTodos">Add New Todos</button>
     <div v-if="uncompleteTodo.length > 0" class="todos-container">

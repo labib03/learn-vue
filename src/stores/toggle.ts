@@ -14,8 +14,15 @@ export const useToggleStore = defineStore('toggle', () => {
     confirmation: false
   })
   function toggleFormNewTodos() {
-    showFormNewTodos.value = !showFormNewTodos.value
+    if (showFormNewTodos.value) {
+      document.body.style.overflowY = 'auto'
+      showFormNewTodos.value = false
+    } else {
+      document.body.style.overflowY = 'hidden'
+      showFormNewTodos.value = true
+    }
   }
+
   function toggleFormUpdateTodos() {
     if (showFormUpdateTodos.value) {
       document.body.style.overflowY = 'auto'
@@ -25,12 +32,21 @@ export const useToggleStore = defineStore('toggle', () => {
       showFormUpdateTodos.value = true
     }
   }
+
   function toggleFullScreen() {
     isFullScreen.value = !isFullScreen.value
   }
+
   function toggleConfirmationModal() {
-    modal.value.confirmation = !modal.value.confirmation
+    if (modal.value.confirmation) {
+      document.body.style.overflowY = 'auto'
+      modal.value.confirmation = false
+    } else {
+      document.body.style.overflowY = 'hidden'
+      modal.value.confirmation = true
+    }
   }
+
   return {
     toast,
     showFormNewTodos,
