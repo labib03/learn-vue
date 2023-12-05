@@ -26,7 +26,7 @@ const completedTodos = computed(() => {
         }"
       />
     </div>
-    <BlankData v-else />
+    <BlankData v-else :msg="'No Archieved Notes'" />
   </div>
 </template>
 
