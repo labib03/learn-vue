@@ -44,3 +44,7 @@ pnpm build
 ```sh
 pnpm lint
 ```
+
+### Reference Pending
+1. https://dev.to/ibelick/creating-bento-grid-layouts-with-css-tailwind-css-26mo?comments_sort=oldest
+   create bento style grid but with auto height
